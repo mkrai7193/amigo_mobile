@@ -13,7 +13,7 @@ class SingleChatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: ()=> Get.toNamed(Routes.CHAT_DETAIL),
+      onTap: () => Get.toNamed(Routes.CHAT_DETAIL),
       child: Row(children: [
         const OnlineProfiles(showCheck: true, showName: false),
         const SizedBox(width: 20),
@@ -23,24 +23,24 @@ class SingleChatItem extends StatelessWidget {
           TextWidget(
               text: 'Ashish Rajput',
               style: context.displayMedium.copyWith(
-                  fontWeight: FontWeight.w700, color: AppColors.davyGray)),
+                  fontWeight: FontWeight.w700,
+                  color:
+                      Get.isDarkMode ? AppColors.white : AppColors.davyGray)),
           const SizedBox(height: 5),
           TextWidget(
               text: 'Hey, there!!',
               style: context.bodySmall.copyWith(
-                  fontWeight: FontWeight.w500, color: AppColors.davyGray))
+                  fontWeight: FontWeight.w500,
+                  color: Get.isDarkMode ? AppColors.white : AppColors.davyGray))
         ])),
         const SizedBox(width: 10),
         Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           TextWidget(
               text: '10:00 am',
-              style: context.bodySmall.copyWith(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.darkSilver)),
+              style: context.bodySmall
+                  .copyWith(fontSize: 10, fontWeight: FontWeight.w500)),
           const SizedBox(height: 5),
-          const Icon(Icons.done_all_outlined,
-              size: 12, color: AppColors.darkSilver)
+          const Icon(Icons.done_all_outlined, size: 12)
         ])
       ]),
     );

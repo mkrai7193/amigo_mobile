@@ -9,7 +9,8 @@ import 'themes/theme_service.dart';
 import 'themes/themes.dart';
 
 void main() async {
-  await SocketIOManager().init('http://ec2-54-91-125-125.compute-1.amazonaws.com:9090');
+  await SocketIOManager()
+      .init('http://ec2-54-91-125-125.compute-1.amazonaws.com:9090');
   debugPrint(
       'Check if socket is connected ${SocketIOManager().isSocketConnected()}');
   runApp(const Amigo());

@@ -5,7 +5,7 @@ import '../constants/app_colors.dart';
 
 class Themes {
   final ThemeData lightTheme = ThemeData(
-      useMaterial3: false,
+      useMaterial3: true,
       primaryColor: AppColors.vividCerulean,
       cardColor: AppColors.white,
       splashColor: Colors.transparent,
@@ -83,7 +83,7 @@ class Themes {
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ));
   final ThemeData darkTheme = ThemeData(
-    useMaterial3: false,
+    useMaterial3: true,
     primaryColor: AppColors.chinesBlack,
     splashColor: Colors.transparent,
     cardColor: AppColors.chinesBlack,
@@ -100,22 +100,22 @@ class Themes {
     iconTheme: const IconThemeData(color: AppColors.white, size: 24),
     textTheme: TextTheme(
       headlineLarge: GoogleFonts.roboto(
-          fontSize: 25, fontWeight: FontWeight.w600, color: AppColors.white),
+          fontSize: 32, fontWeight: FontWeight.w700, color: AppColors.white),
       headlineMedium: GoogleFonts.roboto(
-          fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.white),
+          fontSize: 25, fontWeight: FontWeight.w600, color: AppColors.white),
       displayLarge: GoogleFonts.roboto(
-          fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.white),
+          fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.white),
       displayMedium: GoogleFonts.roboto(
-          fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.white),
+          fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.white),
       displaySmall: GoogleFonts.roboto(
-          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.white),
+          fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.white),
       bodyMedium: GoogleFonts.roboto(
-          fontSize: 12,
+          fontSize: 15,
           fontWeight: FontWeight.w600,
           color: AppColors.brownTraditional),
       titleSmall: GoogleFonts.roboto(
-          fontSize: 10,
-          fontWeight: FontWeight.w600,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
           color: AppColors.primaryButtonColor),
       titleMedium: GoogleFonts.roboto(
           fontSize: 16,
@@ -141,7 +141,7 @@ class Themes {
     ),
     switchTheme: SwitchThemeData(
       thumbColor: MaterialStateProperty.all<Color>(AppColors.white),
-      trackColor: MaterialStateProperty.all<Color>(AppColors.hanPurple),
+      trackColor: MaterialStateProperty.all<Color>(AppColors.capri),
       overlayColor: MaterialStateProperty.all<Color>(AppColors.white),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),

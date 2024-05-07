@@ -21,9 +21,9 @@ class SideNavigator extends StatelessWidget {
     return SafeArea(
         child: Container(
             width: width * 0.8,
-            decoration: const BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+                color: Get.isDarkMode ? AppColors.chinesBlack : AppColors.white,
+                borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(20),
                     bottomRight: Radius.circular(20))),
             child: Column(children: [
@@ -132,8 +132,7 @@ class SideNavigator extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.offAllNamed(Routes.REGISTER),
                     child: Row(children: [
-                      const Icon(Icons.logout,
-                          color: AppColors.black, size: 25),
+                      const Icon(Icons.logout, size: 25),
                       const SizedBox(width: 7),
                       Expanded(
                           child: TextWidget(

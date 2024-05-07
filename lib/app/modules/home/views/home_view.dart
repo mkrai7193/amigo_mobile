@@ -7,7 +7,6 @@ import 'package:amigo/themes/custom_text_theme.dart';
 import 'package:amigo/utils/utils.dart';
 import 'package:amigo/widgets/bordered_container.dart';
 import 'package:amigo/widgets/text_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -123,19 +122,29 @@ class HomeView extends GetView<HomeController> {
                                   horizontal: 14, vertical: 11),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
-                                  color: controller.isDirectMessageSelected.value
-                                      ? AppColors.black
-                                      : null),
+                                  color:
+                                      controller.isDirectMessageSelected.value
+                                          ? AppColors.black
+                                          : Get.isDarkMode
+                                              ? AppColors.white.withOpacity(0.1)
+                                              : null),
                               child: InkWell(
-                                onTap: () => controller.selectDirectMessage(true),
+                                onTap: () =>
+                                    controller.selectDirectMessage(true),
                                 child: Row(children: [
                                   TextWidget(
                                       text: StringConstants.directMessage,
                                       style: context.bodyMedium.copyWith(
                                           color: controller
                                                   .isDirectMessageSelected.value
-                                              ? AppColors.white
-                                              : AppColors.black)),
+                                              ? Get.isDarkMode
+                                                  ? AppColors.white
+                                                  : AppColors.white
+                                                      .withOpacity(0.5)
+                                              : Get.isDarkMode
+                                                  ? AppColors.white
+                                                      .withOpacity(0.5)
+                                                  : AppColors.black)),
                                   const SizedBox(width: 10),
                                   Container(
                                       padding: const EdgeInsets.all(5),
@@ -145,7 +154,10 @@ class HomeView extends GetView<HomeController> {
                                           color: controller
                                                   .isDirectMessageSelected.value
                                               ? AppColors.lightSilver
-                                              : null),
+                                              : Get.isDarkMode
+                                                  ? AppColors.white
+                                                      .withOpacity(0.1)
+                                                  : null),
                                       child: TextWidget(
                                           text: '4',
                                           style: context.titleSmall.copyWith(
@@ -158,9 +170,12 @@ class HomeView extends GetView<HomeController> {
                                   horizontal: 14, vertical: 11),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(23),
-                                  color: !controller.isDirectMessageSelected.value
-                                      ? AppColors.black
-                                      : null),
+                                  color:
+                                      !controller.isDirectMessageSelected.value
+                                          ? AppColors.black
+                                          : Get.isDarkMode
+                                              ? AppColors.white.withOpacity(0.1)
+                                              : null),
                               child: InkWell(
                                   onTap: () =>
                                       controller.selectDirectMessage(false),
@@ -169,9 +184,16 @@ class HomeView extends GetView<HomeController> {
                                         text: StringConstants.group,
                                         style: context.bodyMedium.copyWith(
                                             color: !controller
-                                                    .isDirectMessageSelected.value
-                                                ? AppColors.white
-                                                : AppColors.black)),
+                                                    .isDirectMessageSelected
+                                                    .value
+                                                ? Get.isDarkMode
+                                                    ? AppColors.white
+                                                    : AppColors.white
+                                                        .withOpacity(0.5)
+                                                : Get.isDarkMode
+                                                    ? AppColors.white
+                                                        .withOpacity(0.5)
+                                                    : AppColors.black)),
                                     const SizedBox(width: 10),
                                     Container(
                                         padding: const EdgeInsets.all(5),
@@ -179,9 +201,13 @@ class HomeView extends GetView<HomeController> {
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: !controller
-                                                    .isDirectMessageSelected.value
+                                                    .isDirectMessageSelected
+                                                    .value
                                                 ? AppColors.lightSilver
-                                                : null),
+                                                : Get.isDarkMode
+                                                    ? AppColors.white
+                                                        .withOpacity(0.1)
+                                                    : null),
                                         child: TextWidget(
                                             text: '4',
                                             style: context.titleSmall.copyWith(

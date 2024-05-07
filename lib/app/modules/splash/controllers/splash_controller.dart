@@ -25,7 +25,8 @@ class SplashController extends GetxController {
     debugPrint(
         'authToken $authToken,\n firstName $firstName \n accountType $accountType');
     await 3.delay();
-    if (authToken.isNotEmpty) {
+    Get.offAllNamed(Routes.HOME);
+    /*if (authToken.isNotEmpty) {
       if (firstName.isNotEmpty) {
         if (accountType.isNotEmpty) {
           Get.offAllNamed(Routes.HOME);
@@ -37,6 +38,6 @@ class SplashController extends GetxController {
       }
     } else {
       Get.offAllNamed(Routes.SIGN_IN_BOT);
-    }
+    }*/
   }
 }

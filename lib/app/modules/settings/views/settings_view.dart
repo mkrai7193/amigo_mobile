@@ -23,7 +23,7 @@ class SettingsView extends GetView<SettingsController> {
           child: AppBarWithTitle(title: StringConstants.settings)),
       Expanded(
           child: Container(
-              color: AppColors.white,
+              color: Get.isDarkMode ? AppColors.chinesBlack : AppColors.white,
               padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
                   child: Column(
@@ -188,7 +188,11 @@ class SettingsView extends GetView<SettingsController> {
                           child: TextWidget(
                               text: StringConstants.darkMode,
                               style: context.displaySmall)),
-                      Switch(value: false, onChanged: (onChanged) {})
+                      Obx(() => Switch(
+                          value: controller.isDarkTheme.value,
+                          onChanged: (onChanged) {
+                            controller.changeTheme(onChanged);
+                          }))
                     ]),
                     const SizedBox(height: 20),
                   ]))))

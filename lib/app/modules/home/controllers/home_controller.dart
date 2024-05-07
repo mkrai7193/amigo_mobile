@@ -22,9 +22,9 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
-    getUserProfile();
+    /*getUserProfile();
     getContacts();
-    getAllMessages();
+    getAllMessages();*/
     super.onInit();
   }
 

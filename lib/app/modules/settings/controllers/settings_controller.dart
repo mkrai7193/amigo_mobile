@@ -1,23 +1,21 @@
+import 'package:amigo/themes/theme_service.dart';
 import 'package:get/get.dart';
 
 class SettingsController extends GetxController {
-  //TODO: Implement SettingsController
+  RxBool isDarkTheme = false.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    getTheme();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  getTheme() {
+    isDarkTheme.value = Get.isDarkMode;
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void changeTheme(bool onChanged) {
+    isDarkTheme.value = onChanged;
+    ThemeService().changeThemeMode();
   }
-
-  void increment() => count.value++;
 }
